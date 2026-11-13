@@ -1,0 +1,24 @@
+name: Run My Bot
+on:
+  workflow_dispatch: # بيعملك زرار تشغيل يدوي
+
+jobs:
+  start:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 1. سحب ملفاتك للسيرفر
+        uses: actions/checkout@v4
+
+      - name: 2. تجهيز بايثون
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 3. تسطيب المكتبات ومتصفح Playwright
+        run: |
+          pip install playwright python-telegram-bot requests
+          playwright install chromium
+          playwright install-deps
+
+      - name: 4. تشغيل البوت
+        run: python bot.py
