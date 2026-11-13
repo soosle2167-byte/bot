@@ -2683,7 +2683,7 @@ async def start_background_tasks(application):
     asyncio.create_task(resume_pending_tasks(application))
 
 def main():
-    BOT_TOKEN = "8820345956:AAGeoNiAQEh0MeWGAn9KzYz0tC2S5bgmP7c"
+    BOT_TOKEN = "8306728941:AAEkegoS3NLh8nVDG1Vsm-eT8lxuGvgPDrQ"
     application = Application.builder().token(BOT_TOKEN).post_init(start_background_tasks).build()
     
     # 1. فلتر معالجة الروابط التلقائية
